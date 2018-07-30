@@ -1,0 +1,21 @@
+{
+  "name": "mockingbird",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node ./src/index.ts"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "ts-node": "7.0.0",
+    "typescript": "2.9.2"
+  },
+  "dependencies": {
+    "chalk": "2.4.1",
+    "chokidar": "2.0.4",
+    "fastify": "1.9.0"
+  }
+}

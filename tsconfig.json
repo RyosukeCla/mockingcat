@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2018",
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "sourceMap": false,
+    "outDir": "lib/",
+    "declaration": true,
+    "experimentalDecorators": true,
+    "strict": true,
+  },
+  "include": [
+    "./src//**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
