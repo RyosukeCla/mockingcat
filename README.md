@@ -1,8 +1,8 @@
 # Mockingcat
 > lightweight mock server based on fastify
 
-# Getting started
-## #1 setup
+## Getting started
+### #1 setup
 install mockingcat (or use npx)
 ```
 $ npm i -g mockingcat
@@ -15,14 +15,14 @@ make `mock` dir to project path
 $ mkdir mock
 ```
 
-## #2 start mockingcat
+### #2 start mockingcat
 ```
 $ mockingcat
 # or
 $ npx mockingcat
 ```
 
-## #3 make mock api - 1
+### #3 make mock api - 1
 make file `mock/get.js`
 ```
 $ touch mock/get.js
@@ -50,7 +50,7 @@ $ curl http://localhost:8090/mock/get
 > {"message":"hello, world!"}
 ```
 
-## #4 make mock api - 2
+### #4 make mock api - 2
 next, make `mock/user/_id.js`, and append this
 ```js
 module.exports = {
@@ -67,8 +67,8 @@ $ curl http://localhost:8090/mock/user/hello
 > {"id": "hello"}
 ```
 
-# Detail
-## config (default)
+## Detail
+### config (default)
 `mockingcat.config.js`
 ```js
 module.exports = {
@@ -79,7 +79,7 @@ module.exports = {
 }
 ```
 
-## mock file (default)
+### mock file (default)
 ```js
 module.exports = {
   method: 'GET',
