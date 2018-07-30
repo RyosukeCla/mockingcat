@@ -1,4 +1,4 @@
-export default class Mockingbird {
+export default class Mockingcat {
     private app;
     constructor();
     private setup;

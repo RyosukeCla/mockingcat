@@ -16,7 +16,7 @@ const defaultConfig: Config = {
   verbose: true
 }
 
-const CONFIG_PATH = './mockingbird.config.js'
+const CONFIG_PATH = './mockingcat.config.js'
 
 const configLoader = (): Config => {
   const isExist = fs.existsSync(CONFIG_PATH)

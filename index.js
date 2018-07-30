@@ -1,6 +1,6 @@
 const chokidar = require('chokidar')
 const config = require('./lib/config')
-const Mockingbird = require('./lib/index')
+const Mockingcat = require('./lib/index')
 const chalk = require('chalk')
 
 const watcher = chokidar.watch(config.default.srcDir, {
