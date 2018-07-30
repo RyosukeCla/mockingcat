@@ -16,7 +16,13 @@ export default class Mockingbird {
   private setup () {
     console.clear()
     console.log(chalk.bgBlueBright(' Start '))
-    if (config.verbose) console.log('Mock api routes')
+    if (config.verbose) {
+      this.app.use((req, rep, next) => {
+        console.log(`${util.leftPad(chalk.green(req.method || 'NONE'), 7)} ${req.url}`)
+        next()
+      })
+      console.log('Mock api routes')
+    }
     const files = resolver(config.srcDir)
     files.forEach((filepath) => {
       this.register(filepath)
