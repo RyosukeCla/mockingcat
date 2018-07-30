@@ -91,3 +91,15 @@ module.exports = {
 ```
 you can define mock file as fastify route option.
 [more detail.](https://github.com/fastify/fastify/blob/master/docs/Routes.md#full-declaration)
+
+### CLI
+```
+$ mockingcat --help
+
+Mockingcat
+  --help     (-h)
+  --port     (-p) : 8090
+  --srcdir   (-s) : ./mock
+  --baseurl  (-b) : /mock
+  --verbose  (-v) : true
+```
