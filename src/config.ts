@@ -1,5 +1,6 @@
 import * as fs from 'fs'
 import * as path from 'path'
+import * as minimist from 'minimist'
 
 export interface Config {
   srcDir: string
@@ -15,6 +16,13 @@ const defaultConfig: Config = {
   verbose: true
 }
 
+const argv = minimist(process.argv.slice(2))
+const argvConfig: any = {}
+if (argv.srcdir || argv.s) argvConfig.srcDir = argv.srcdir || argv.s
+if (argv.baseurl || argv.b) argvConfig.baseUrl = argv.baseurl || argv.b
+if (argv.port || argv.p) argvConfig.port = argv.port || argv.p
+if (argv.verbose || argv.v) argvConfig.verbose = JSON.parse(argv.verbose || argv.v)
+
 const CONFIG_PATH = './mockingcat.config.js'
 
 const configLoader = (): Config => {
@@ -28,7 +36,7 @@ const configLoader = (): Config => {
 }
 
 const mergeConfig = (config: Config) => {
-  return { ...defaultConfig, ...config }
+  return { ...defaultConfig, ...config, ...argvConfig } as Config
 }
 
 export default mergeConfig(configLoader())
