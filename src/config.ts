@@ -1,5 +1,6 @@
 import * as fs from 'fs'
 import * as path from 'path'
+import * as appRootPath from 'app-root-path'
 
 export interface Config {
   srcDir: string
@@ -20,7 +21,7 @@ const CONFIG_PATH = './mockingbird.config.js'
 const configLoader = (): Config => {
   const isExist = fs.existsSync(CONFIG_PATH)
   if (isExist) {
-    const configPath = path.resolve(__dirname, '../', CONFIG_PATH)
+    const configPath = path.resolve(appRootPath.path, CONFIG_PATH)
     return require(configPath) as Config
   } else {
     return defaultConfig
