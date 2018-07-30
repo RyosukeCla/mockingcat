@@ -21,7 +21,7 @@ const CONFIG_PATH = './mockingcat.config.js'
 const configLoader = (): Config => {
   const isExist = fs.existsSync(CONFIG_PATH)
   if (isExist) {
-    const configPath = path.resolve(appRootPath.path, CONFIG_PATH)
+    const configPath = path.resolve(CONFIG_PATH) //= path.resolve(appRootPath.path, CONFIG_PATH)
     return require(configPath) as Config
   } else {
     return defaultConfig

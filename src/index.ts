@@ -34,7 +34,7 @@ export default class Mockingcat {
     url = path.join(url).replace(path.join(config.srcDir), '')
     url = path.join(config.baseUrl, url)
 
-    const modulePath = path.resolve(appRootPath.path, filepath)
+    const modulePath = path.resolve(filepath) //= path.resolve(appRootPath.path, filepath)
     delete require.cache[modulePath]
     const mockObject = require(modulePath)
 
