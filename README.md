@@ -98,6 +98,7 @@ $ mockingcat --help
 
 Mockingcat
   --help     (-h)
+  --version  (-v)
   --port     (-p) : 8090
   --srcdir   (-s) : ./mock
   --baseurl  (-b) : /mock
