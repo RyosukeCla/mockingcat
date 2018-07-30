@@ -1,5 +1,5 @@
 {
-  "name": "mockingbird",
+  "name": "mockingcat",
   "version": "0.0.1",
   "description": "lightweight mock server based on fastify (beta)",
   "keywords": [
@@ -10,10 +10,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RyosukeCla/mockingbird.git"
+    "url": "git+https://github.com/RyosukeCla/mockingcat.git"
   },
   "bugs": {
-    "url": "https://github.com/RyosukeCla/mockingbird/issues"
+    "url": "https://github.com/RyosukeCla/mockingcat/issues"
   },
   "engines": {
     "node": ">= 6.9.0",
@@ -27,7 +27,7 @@
   "author": "RyosukeCla",
   "license": "MIT",
   "bin": {
-    "mockingbird": "./bin/mockingbird"
+    "mockingcat": "./bin/mockingcat"
   },
   "devDependencies": {
     "@types/app-root-path": "1.2.4",

@@ -6,7 +6,7 @@ import * as util from './util'
 import chalk from 'chalk'
 import * as appRootPath from 'app-root-path'
 
-export default class Mockingbird {
+export default class Mockingcat {
   private app: fastify.FastifyInstance
 
   constructor () {
@@ -65,7 +65,7 @@ export default class Mockingbird {
   start () {
     this.setup()
     this.app.listen(config.port, () => {
-      console.log(`Mockingbird listening on http://localhost:${config.port}`)
+      console.log(`Mockingcat listening on http://localhost:${config.port}`)
     })
   }
 }

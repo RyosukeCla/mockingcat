@@ -1,13 +1,13 @@
-# Mockingbird
+# Mockingcat
 > lightweight mock server based on fastify
 
 # Getting started
 ## #1 setup
-install mockingbird (or use npx)
+install mockingcat (or use npx)
 ```
-$ npm i -g mockingbird
+$ npm i -g mockingcat
 # or
-$ npm i -D mockingbird
+$ npm i -D mockingcat
 ```
 
 make `mock` dir to project path
@@ -15,11 +15,11 @@ make `mock` dir to project path
 $ mkdir mock
 ```
 
-## #2 start mockingbird
+## #2 start mockingcat
 ```
-$ mockingbird
+$ mockingcat
 # or
-$ npx mockingbird
+$ npx mockingcat
 ```
 
 ## #3 make mock api - 1
@@ -69,7 +69,7 @@ $ curl http://localhost:8090/mock/user/hello
 
 # Detail
 ## config (default)
-`mockingbird.config.js`
+`mockingcat.config.js`
 ```js
 module.exports = {
   port: 8090,

@@ -8,7 +8,7 @@ const watcher = chokidar.watch(config.default.srcDir, {
   ignoreInitial: true
 })
 
-let server = new Mockingbird.default()
+let server = new Mockingcat.default()
 try {
   server.start()
 } catch (e) {
