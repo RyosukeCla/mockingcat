@@ -4,7 +4,6 @@ import config from './config'
 import resolver from './reolver'
 import * as util from './util'
 import chalk from 'chalk'
-import * as appRootPath from 'app-root-path'
 
 export default class Mockingcat {
   private app: fastify.FastifyInstance
@@ -34,7 +33,7 @@ export default class Mockingcat {
     url = path.join(url).replace(path.join(config.srcDir), '')
     url = path.join(config.baseUrl, url)
 
-    const modulePath = path.resolve(filepath) //= path.resolve(appRootPath.path, filepath)
+    const modulePath = path.resolve(filepath)
     delete require.cache[modulePath]
     const mockObject = require(modulePath)
 
