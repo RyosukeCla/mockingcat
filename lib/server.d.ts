@@ -10,4 +10,5 @@ export default class MockingcatServer {
     start(): void;
     private setup;
     private register;
+    private registerRoute;
 }
