@@ -9,6 +9,9 @@
     "declaration": true,
     "experimentalDecorators": true,
     "strict": true,
+    "lib": [
+      "es2015", "es2018.promise"
+    ]
   },
   "include": [
     "./src//**/*"
