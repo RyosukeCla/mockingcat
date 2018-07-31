@@ -1,6 +1,6 @@
 {
   "name": "mockingcat",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "lightweight mock server based on fastify (beta)",
   "keywords": [
     "mock",
