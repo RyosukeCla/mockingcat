@@ -1,9 +1,11 @@
+import * as fastify from 'fastify'
+
 export interface Config {
   srcDir: string
   baseUrl: string
   port: number
   verbose: boolean,
-  middlewares: any[],
+  middlewares: fastify.Middleware<any, any, any>[],
   ignore: RegExp[]
 }
 
