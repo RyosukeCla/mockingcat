@@ -82,6 +82,7 @@ module.exports = {
 ```
 
 ### mock file (default)
+- module.exports: { fastify route options } or Array<{ fastify route options }>
 ```js
 module.exports = {
   method: 'GET',
@@ -106,3 +107,6 @@ Mockingcat
   --baseurl  (-b) : /mock
   --verbose  (-v) : true
 ```
+
+### Examples
+- [examples](./examples)
