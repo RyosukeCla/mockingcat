@@ -109,4 +109,4 @@ Mockingcat
 ```
 
 ### Examples
-- [examples](./examples)
+- [example](./example)
