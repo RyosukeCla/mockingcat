@@ -53,6 +53,11 @@ const mockingcatConfig = {
 }
 
 // start mockingcat
+const { logError } = require('./lib/util')
+process.on('uncaughtException', (e) => {
+  logError(e)
+})
+
 const Mockingcat = require('./lib/index')
 const mockingcat = new Mockingcat.default(mockingcatConfig)
 mockingcat.start()
