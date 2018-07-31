@@ -3,6 +3,8 @@ export interface Config {
     baseUrl: string;
     port: number;
     verbose: boolean;
+    middlewares: any[];
+    ignore: RegExp[];
 }
-declare const _default: Config;
-export default _default;
+export declare const defaultConfig: Config;
+export declare const mergeConfig: (config: Config) => Config;

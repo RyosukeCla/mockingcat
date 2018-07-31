@@ -1,9 +1,10 @@
+import { Config } from './config';
+import * as fastify from 'fastify';
 export default class Mockingcat {
-    private app;
-    constructor();
-    private setup;
-    private register;
-    stop(cb: any): void;
-    reset(): void;
+    private server;
+    private wacther;
+    private config;
+    constructor(config?: Config);
+    getFastifyInstance(): fastify.FastifyInstance;
     start(): void;
 }
