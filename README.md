@@ -75,7 +75,9 @@ module.exports = {
   port: 8090,
   srcDir: './mock',
   baseUrl: '/mock',
-  verbose: true
+  verbose: true,
+  middlewares: [], // fastify middleware
+  ignore: [/node_modules/]
 }
 ```
 
