@@ -68,17 +68,27 @@ export default class MockingcatServer {
     delete require.cache[modulePath]
     const mockObject = require(modulePath)
 
-    const option = {
-      method: 'GET',
-      url,
-      handler (request: any, reply: any) {
-        reply.send({ message: 'not implemented yet' })
-      },
-      ...mockObject
+    if (mockObject instanceof Array) {
+      this.registerRoute(url, mockObject)
+    } else {
+      this.registerRoute(url, [mockObject])
     }
+  }
 
-    if (this.config.verbose) console.log(`  - ${util.leftPad(chalk.green(option.method), 7)} ${option.url}`)
+  private registerRoute (url: string, mockOjects: any[]) {
+    mockOjects.forEach((mockObject) => {
+      const option = {
+        method: 'GET',
+        url,
+        handler (request: any, reply: any) {
+          reply.send({ message: 'not implemented yet' })
+        },
+        ...mockObject
+      }
 
-    this.app.route(option)
+      if (this.config.verbose) console.log(`  - ${util.leftPad(chalk.green(option.method), 7)} ${option.url}`)
+
+      this.app.route(option)
+    })
   }
 }
