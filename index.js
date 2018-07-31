@@ -2,10 +2,10 @@ const minimist = require('minimist')
 const fs = require('fs')
 const path = require('path')
 const argv = minimist(process.argv.splice(2))
+const packagejson = require('./package.json')
 
 // version
 if (argv.version || argv.v) {
-  const packagejson = require('./package.json')
   console.log(`version - ${packagejson.version}`)
   process.exit(0)
 }
@@ -13,7 +13,7 @@ if (argv.version || argv.v) {
 // help
 if (argv.help || argv.h) {
   const help =
-`Mockingcat CLI
+`Mockingcat CLI - v${packagejson.version}
 
   eg) $ mockingcat -p 3000
 
