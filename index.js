@@ -1,64 +1,58 @@
-const chokidar = require('chokidar')
-const config = require('./lib/config')
-const Mockingcat = require('./lib/index')
-const chalk = require('chalk')
 const minimist = require('minimist')
-const packagejson = require('./package.json')
-
+const fs = require('fs')
+const path = require('path')
 const argv = minimist(process.argv.splice(2))
+
+// version
 if (argv.version || argv.v) {
-  console.log(packagejson.version)
+  const packagejson = require('./package.json')
+  console.log(`version - ${packagejson.version}`)
   process.exit(0)
 }
+
+// help
 if (argv.help || argv.h) {
-  console.log(`
-Mockingcat
+  const help =
+`Mockingcat CLI
+
+  eg) $ mockingcat -p 3000
+
   --help     (-h)
   --version  (-v)
   --port     (-p) : 8090
   --srcdir   (-s) : ./mock
   --baseurl  (-b) : /mock
   --verbose  (-v) : true
-  `)
+`
+  console.log(help)
   process.exit(0)
 }
 
-const watcher = chokidar.watch(config.default.srcDir, {
-  ignored: /(^|[\/\\])\../,
-  ignoreInitial: true
-})
+// config with cli
+const argvConfig = {}
+if (argv.srcdir || argv.s) argvConfig.srcDir = argv.srcdir || argv.s
+if (argv.baseurl || argv.b) argvConfig.baseUrl = argv.baseurl || argv.b
+if (argv.port || argv.p) argvConfig.port = argv.port || argv.p
+if (argv.verbose || argv.v) argvConfig.verbose = JSON.parse(argv.verbose || argv.v)
 
-let server = new Mockingcat.default()
-try {
-  server.start()
-} catch (e) {
-  console.clear()
-  console.log(chalk.bgRed(' Error '), e)
+const loadConfig = () => {
+  const CONFIG_PATH = './mockingcat.config.js'
+
+  const isExist = fs.existsSync(CONFIG_PATH)
+  if (isExist) {
+    const configPath = path.resolve(CONFIG_PATH)
+    return require(configPath)
+  } else {
+    return {}
+  }
 }
 
-process.on('unhandledRejection', e => {
-  console.clear()
-  console.log(chalk.bgRed(' Error '), e)
-})
+const loadedConfig = loadConfig()
+const mockingcatConfig = {
+  ...loadedConfig, ...argvConfig
+}
 
-watcher.on('all', () => {
-  console.log('asjfoasjf')
-  try {
-    if (server) {
-      server.stop(() => {
-        try {
-          server.reset()
-          server.start()
-        } catch (e) {
-          console.clear()
-          console.log(chalk.bgRed(' Error '))
-          console.error(e)
-        }
-      })
-    }
-  } catch (e) {
-    console.clear()
-    console.log(chalk.bgRed(' Error '))
-    console.error(e)
-  }
-})
+// start mockingcat
+const Mockingcat = require('./lib/index')
+const mockingcat = new Mockingcat.default(mockingcatConfig)
+mockingcat.start()
