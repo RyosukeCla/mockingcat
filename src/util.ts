@@ -1,3 +1,5 @@
+import chalk from 'chalk'
+
 export const splitFilename = (filename: string): { name: string, extension: string } => {
   const split = filename.split('.')
   if (split.length !== 2) throw new Error(`could'nt recognize file: ${filename}`)
@@ -19,4 +21,15 @@ export const leftPad = (str: string, padding: number) => {
     res += ' '
   }
   return res
+}
+
+export const logError = (e: Error) => {
+  console.clear()
+  console.log(chalk.bgRed(' Error '))
+  console.log(e)
+}
+
+export const logStart = () => {
+  console.clear()
+  console.log(chalk.bgBlueBright(' Start '))
 }
