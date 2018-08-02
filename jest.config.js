@@ -6,5 +6,8 @@ module.exports = {
     '^.+\\.ts$': 'ts-jest',
   },
   moduleFileExtensions: [...defaults.moduleFileExtensions, 'ts'],
-  testEnvironment: 'node'
+  testEnvironment: 'node',
+  collectCoverageFrom: [
+    'src/**/*.ts'
+  ]
 }

@@ -21,7 +21,7 @@
   },
   "main": "./lib/index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "dev": "tsc --watch",
     "build": "tsc",
     "start": "node index"
