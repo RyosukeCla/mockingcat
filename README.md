@@ -1,5 +1,6 @@
-# Mockingcat
-> lightweight mock server based on fastify
+# Mockingcat [![Build Status](https://travis-ci.org/RyosukeCla/mockingcat.svg?branch=master)](https://travis-ci.org/RyosukeCla/mockingcat)
+
+> Build a mock api server with zero-conf at the lightning speed
 
 ## Getting started
 ### #1 setup
@@ -82,7 +83,7 @@ module.exports = {
 ```
 
 ### mock file (default)
-- module.exports: { fastify route options } or Array<{ fastify route options }>
+- module.exports: `{ fastify route options }` or `Array<{ fastify route options }>`
 ```js
 module.exports = {
   method: 'GET',
@@ -93,7 +94,8 @@ module.exports = {
 }
 ```
 you can define mock file as fastify route option.
-[more detail.](https://github.com/fastify/fastify/blob/master/docs/Routes.md#full-declaration)
+
+- [DOC: fastify route options](https://github.com/fastify/fastify/blob/master/docs/Routes.md#full-declaration)
 
 ### CLI
 ```
