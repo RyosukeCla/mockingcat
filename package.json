@@ -1,12 +1,14 @@
 {
   "name": "mockingcat",
-  "version": "0.3.1",
-  "description": "lightweight mock server based on fastify (beta)",
+  "version": "0.4.0",
+  "description": "Build a mock api server with zero-conf at the lightning speed",
   "keywords": [
     "mock",
+    "api",
     "server",
     "nodejs",
-    "fastify"
+    "fastify",
+    "zero-configuration"
   ],
   "repository": {
     "type": "git",
