@@ -14,6 +14,11 @@ module.exports = [{
     rep.send('PUT')
   }
 }, {
+  method: 'PATCH',
+  hander (req, rep) {
+    rep.send('PATCH')
+  }
+}, {
   method: 'DELETE',
   hander (req, rep) {
     rep.send('DELETE')
