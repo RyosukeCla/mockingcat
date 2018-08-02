@@ -60,13 +60,9 @@ export default class MockingcatServer {
   }
 
   private register (filepath: string) {
-    let url = util.processFilename(filepath)
-    url = path.join(url).replace(path.join(this.config.srcDir), '')
-    url = path.join(this.config.baseUrl, url)
+    const url = util.processFilename(filepath, this.config.srcDir, this.config.baseUrl)
 
-    const modulePath = path.resolve(filepath)
-    delete require.cache[modulePath]
-    const mockObject = require(modulePath)
+    const mockObject = util.requireWithoutCache(filepath)
 
     if (mockObject instanceof Array) {
       this.registerRoute(url, mockObject)
