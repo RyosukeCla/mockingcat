@@ -1,6 +1,6 @@
 # Mockingcat [![Build Status](https://travis-ci.org/RyosukeCla/mockingcat.svg?branch=master)](https://travis-ci.org/RyosukeCla/mockingcat)
 
-> Build a mock api server with zero-conf at the lightning speed
+> Build a mock api server with zero-conf at lightning speed
 
 ## Getting started
 ### #1 setup

@@ -1,7 +1,7 @@
 {
   "name": "mockingcat",
   "version": "0.4.0",
-  "description": "Build a mock api server with zero-conf at the lightning speed",
+  "description": "Build a mock api server with zero-conf at lightning speed",
   "keywords": [
     "mock",
     "api",
